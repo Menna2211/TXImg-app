@@ -12,14 +12,18 @@ import torch
 import time
 from diffusers import StableDiffusionPipeline, DPMSolverMultistepScheduler
 
+
+
+
 #pipe = pipe.to("cuda")
 
 @st.cache(allow_output_mutation=True)
 def get_model():
-    model_id = "stabilityai/stable-diffusion-2-1"
+    model_id = "CompVis/stable-diffusion-v1-4"
+   # model_id = "stabilityai/stable-diffusion-2-1"
     # Use the DPMSolverMultistepScheduler (DPM-Solver++) scheduler here instead
     pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
-    pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
+   # pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
     return pipe
 
 pipe =get_model()
