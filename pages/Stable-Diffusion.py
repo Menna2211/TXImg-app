@@ -12,9 +12,15 @@ from diffusers import StableDiffusionPipeline
 import torch
 import time
 
-model_id = "runwayml/stable-diffusion-v1-5"
-pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
+
 #pipe = pipe.to("cuda")
+@st.cache(allow_output_mutation=True)
+def get_model():
+    model_id = "runwayml/stable-diffusion-v1-5"
+    pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
+    return pipe
+
+pipe =get_model()
 
 
 st.title("Stable Diffusion App")
