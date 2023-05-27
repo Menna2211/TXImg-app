@@ -13,7 +13,7 @@ import time
 from optimum.onnxruntime import ORTStableDiffusionPipeline
 
 model_id = "runwayml/stable-diffusion-v1-5"
-pipe = ORTStableDiffusionPipeline.from_pretrained(model_id)
+pipe = ORTStableDiffusionPipeline.from_pretrained(model_id, export=True)
 
 st.title("Stable Diffusion App")
 # define the layout of your app
