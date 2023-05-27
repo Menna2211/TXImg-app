@@ -6,4 +6,4 @@ accelerate
 diffusers
 safetensors
 tokenizers
-optimum["onnxruntime"]
+optimum[onnxruntime]
