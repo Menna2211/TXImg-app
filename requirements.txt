@@ -6,3 +6,5 @@ accelerate
 diffusers
 safetensors
 tokenizers
+PIL 
+requests
