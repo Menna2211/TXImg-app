@@ -42,8 +42,8 @@ def predict_step(image):
 
 st.title("Image Captioning App")
 # define the layout of your app
-st.write("Upload an image:")
-uploaded_file = st.file_uploader("", type=["jpg", "jpeg", "png"])
+#st.write("Upload an image:")
+uploaded_file = st.file_uploader("Upload an image:", type=["jpg", "jpeg", "png"])
 submit_button = st.button("Compute")
 
 if uploaded_file is not None:
