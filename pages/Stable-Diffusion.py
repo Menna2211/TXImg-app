@@ -23,6 +23,8 @@ def get_model():
    # model_id = "stabilityai/stable-diffusion-2-1"
     # Use the DPMSolverMultistepScheduler (DPM-Solver++) scheduler here instead
     pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
+   # model_id = "runwayml/stable-diffusion-v1-5"
+    pipe = pipe.to("cuda")
    # pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
     return pipe
 
